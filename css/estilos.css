@@ -1,7 +1,7 @@
 *{
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;  
+	box-sizing: border-box;
 }
 
 body{
@@ -31,8 +31,11 @@ header {
   	background: linear-gradient(to right, hsla(340, 95%, 50%, 0.450), hsla(317, 45%, 52%, 0.671)
 	), url(../img/portada.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
  	background-size: cover;
- 	background-attachment: fixed;
- 	position: relative;  
+
+	/*LO CAMBIE DE FIXED A SCROLL PARA QUE QUEDE FIJO CUANDO SCROLLEAS...*/
+ 	background-attachment: scroll;
+
+	position: relative;
 }
 
 nav{
@@ -57,19 +60,23 @@ header .slogan{
 	justify-content: center;
 	flex-direction: column;
 	text-align: center;
-	color: #fff; 	
+	color: #fff;
 }
 
 .wave{
 	position: absolute;
 	bottom: 0;
-	width: 100%; 
+	width: 100%;
+}
+
+a{
+	text-decoration: none;
 }
 
 .categorias-img{
 	display: flex;
 	position: center;
-} 
+}
 img {
 	position: center;
 	height: auto;
@@ -84,5 +91,5 @@ img {
 	margin-top: 30px;
 	margin-bottom: 50px;
 	font-size: 30px;
-	color: #bc4e9c; 
+	color: #bc4e9c;
 }

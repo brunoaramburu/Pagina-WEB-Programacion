@@ -59,6 +59,12 @@ textarea {
 .boton-final{
     text-decoration: none;
 }
+.boton-final2{
+    text-decoration: none;
+    position: relative;
+    left: 70px;
+}
+
 
 @media (max-width:480px) {
     form{

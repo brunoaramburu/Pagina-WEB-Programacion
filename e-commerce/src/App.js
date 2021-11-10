@@ -13,10 +13,10 @@ function App() {
                 <a target="_blank" href="Nav/ingresa.html">Mi Cuenta</a>
               </nav>
             </div>
-            <section className="slogan">
-              <h1>Los mejores productos</h1>
-              <h2>a un click de distancia</h2>
-            </section>
+            {/*<section className="slogan">*/}
+            {/*  <h1>Los mejores productos</h1>*/}
+            {/*  <h2>a un click de distancia</h2>*/}
+            {/*</section>*/}
             {/*<div className="wave" style="height: 150px; overflow: hidden;">*/}
             {/*  <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">*/}
             {/*    <path d="M0.00,49.98 C112.02,183.06 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"*/}

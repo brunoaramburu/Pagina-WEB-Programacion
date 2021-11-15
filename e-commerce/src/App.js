@@ -21,7 +21,7 @@ function App() {
         <div>
           <Switch>
 
-            <Route exact={true} path="/main">
+            <Route exact={true} path="/">
                <Navbar />
             </Route>
             <Route exact={true} path={`/main/inicio`}>

@@ -28,6 +28,8 @@ Comandos para inciar el projecto
 
 > pipenv install drf-yasg
 
+> pipenv install django-cors-headers 
+
 > python manage.py runserver
 
 AVISO! 

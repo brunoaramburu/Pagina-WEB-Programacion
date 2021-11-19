@@ -2,45 +2,50 @@ import './App.css';
 import {
 BrowserRouter as Router,
 Switch,
-Route,
-Link
+Route
 } from "react-router-dom";
 
 import Inicio from "./components/Inicio";
 import MisCompras from "./components/MisCompras";
-import MiCuenta from "./components/MiCuenta";
-import Navbar from "./components/navbar/Navbar";
+import Profile from "./components/Profile";
 import AuthRoute from "./components/AuthRoute";
-import Deportes from "./components/Deportes";
-import Indumentaria from "./components/Indumentaria";
-import Electronica from "./components/Electronica";
+import Productos from "./components/Productos";
+import EditarProducto from "./components/EditarProducto";
+import EliminarProducto from "./components/EliminarProducto";
+import LoginScreen from "./components/LoginScreen/LoginScreen";
+import SignUpScreen from "./components/SignUpScreen/SignUpScreen";
 
 function App() {
   return (
   <Router>
         <div>
           <Switch>
-
+            <Route exact={true} path="/login">
+               <LoginScreen />
+            </Route>
+            <Route exact={true} path="/signup">
+               <SignUpScreen />
+            </Route>
             <Route exact={true} path="/">
-               <Navbar />
+               <Inicio />
             </Route>
             <Route exact={true} path={`/main/inicio`}>
               <Inicio />
             </Route>
-            <Route exact={true} path={`/main/deportes`}>
-              <Deportes />
+            <Route exact={true} path={`/main/productos`}>
+              <Productos />
             </Route>
-            <Route exact={true} path={`/main/indumentaria`}>
-              <Indumentaria />
+            <Route exact={true} path={`/main/productos/editar/:id`}>
+              <EditarProducto/>
             </Route>
-            <Route exact={true} path={`/main/electronica`}>
-              <Electronica />
+            <Route exact={true} path={`/main/productos/eliminar/:id`}>
+              <EliminarProducto/>
             </Route>
             <AuthRoute exact={true} path={`/main/miscompras`}>
               <MisCompras />
             </AuthRoute>
-            <AuthRoute exact={true} path={`/main/micuenta`}>
-               <MiCuenta />
+            <AuthRoute exact={true} path={`/main/profile`}>
+               <Profile />
             </AuthRoute>
             <Route path="*">
                <div><h1>404</h1></div>

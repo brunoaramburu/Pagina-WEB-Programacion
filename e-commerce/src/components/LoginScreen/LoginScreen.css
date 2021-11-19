@@ -1,0 +1,64 @@
+.welcome-text-container{
+    margin: 20px;
+    text-align: center;
+}
+
+.form-label{
+    position: relative;
+    left: 550px;
+    top: 5px;
+}
+
+.form-label2{
+    position: relative;
+    left: 550px;
+    top: 15px;
+}
+
+
+.form-control{
+    position: relative;
+    left: 555px;
+    top: 5px;
+}
+
+.form-control2{
+    position: relative;
+    left: 564px;
+    top: 15px;
+}
+
+.btn-primary{
+    position: relative;
+    left: 600px;
+    top: 45px;
+    border-radius: 1px;
+    background: #31384A;
+    color: white;
+    padding: 3px;
+}
+
+.btn-second{
+    position: relative;
+    left: 340px;
+    top: 35px;
+    border-radius: 1px;
+    background: #31384A;
+    color: white;
+    padding: 3px;
+}
+
+.card-img-top{
+    position: relative;
+    left: 20px;
+    top: 100px;
+    height: 450px;
+    width: 340px;
+    margin: 50px;
+    padding: 1px;
+}
+
+.card-title{
+    position: relative;
+    left: 100px;
+}

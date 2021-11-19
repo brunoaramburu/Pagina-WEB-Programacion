@@ -1,4 +1,4 @@
 const Ingresa = () => {
-    return (Aca va a estar el login);
+    return ('Aca va a estar el login')
 }
-export default Ingresa
+export default Ingresa;

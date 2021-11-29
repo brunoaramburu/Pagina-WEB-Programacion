@@ -38,10 +38,14 @@ const SignUpScreen = () => {
                    onChange={(e) => setUsername(e.target.value) }/>
           </div>
           <div className="mb-3">
-            <label htmlFor="disabledTextInput" className="form-label">Password</label>
-            <input type="text" id="disabledTextInput" className="form-control" value={password}
-                   onChange={(e) => setPassword(e.target.value) }
-            />
+            <label htmlFor="exampleFormControlTextarea1" className="form-label2">Constraseña:</label>
+            <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                className="form-control2"
+                id="exampleFormControlInput1"
+                placeholder="Password" />
           </div>
           <button type="submit" className="btn btn-primary">REGISTRARSE</button>
           <div>

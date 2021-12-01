@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import Logo from '../img/logo2.png'
+import './navbar/Navbar.css'
 
 const Inicio = () => {
     return (
@@ -12,11 +13,11 @@ const Inicio = () => {
                     <Link to={'/main/miscompras'}><h4 className="navbar-element">Mis compras</h4></Link>
                 </div>
                 <section className="slogan">
-                    <h1>Publica tus productos</h1>
-                    <h2>Facil y Gratis</h2>
+                    <h1>PUBLICA TUS PRODUCTOS</h1>
+                    <h2>FACIL Y GRATIS</h2>
                 </section>
                 <div>
-                    <Link to={'/main/productos'}><h4 className="titulo">Publica Aqui!</h4></Link>
+                    <Link to={'/main/productos'}><h4 className="titulo">VER PRODUCTOS</h4></Link>
                 </div>
                 <div className="logo">
                     <img src={ Logo } />

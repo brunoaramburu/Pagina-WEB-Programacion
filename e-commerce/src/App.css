@@ -21,22 +21,31 @@ body{
     overflow: hidden;
 }
 
+.logo{
+    margin-left: 20px;
+}
+
 .titulo{
     position: relative;
     top: 190px;
     left: 0%;
-    color: #bc4e9c;
+    color: white;
     font-size: 45px;
     text-align: center;
     margin-bottom: 60px;
 }
+
+.titulo:hover{
+    background:grey;
+}
+
 .h2title{
-color: #bc4e9c;
-margin-left: 80px;
+    text-align: center;
+    color: white;
 }
 .price{
-margin-left: 80px;
-margin-bottom: 30px;
+    margin-left: 80px;
+    margin-bottom: 30px;
 }
 /*header {*/
 /*    width: 100%;*/
@@ -62,6 +71,7 @@ header .slogan{
     position: relative;
     top: 10px;
     left: -100px;
+    text-shadow: 5px 2px #bc4e9c;
 }
 
 a{

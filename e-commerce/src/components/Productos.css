@@ -56,3 +56,19 @@ body{
     padding: 1px;
 }
 
+.card-container-custom{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.card-title{
+    font-size: 26px;
+}
+
+
+.card-text{
+    font-size: 18px;
+    color: white;
+}
+

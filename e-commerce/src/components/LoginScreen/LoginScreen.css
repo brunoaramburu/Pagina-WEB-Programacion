@@ -1,18 +1,21 @@
 .welcome-text-container{
     margin: 20px;
     text-align: center;
+    color: white;
 }
 
 .form-label{
     position: relative;
     left: 550px;
     top: 5px;
+    color: white;
 }
 
 .form-label2{
     position: relative;
     left: 550px;
     top: 15px;
+    color: white;
 }
 
 

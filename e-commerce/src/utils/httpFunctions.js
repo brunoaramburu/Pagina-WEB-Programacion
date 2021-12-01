@@ -33,6 +33,14 @@ export const httpDelete = async (endpoint) => {
   })
 }
 
+export const httpPatch = async (endpoint, data) => {
+  return axios.patch(baseUrl + endpoint, data, {
+     headers: {
+      authorization: 'Bearer ' + localStorage.getItem('token')
+    }
+  })
+}
+
 export const httpPostPublic = async (endpoint, data) => {
   return axios.post(baseUrl + endpoint, data)
   }

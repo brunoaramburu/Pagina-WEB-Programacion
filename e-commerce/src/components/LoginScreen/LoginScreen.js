@@ -1,7 +1,8 @@
 import '../LoginScreen/LoginScreen.css';
 import {useState} from "react";
 import {httpPost} from "../../utils/httpFunctions";
-import {Link, useHistory} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom';
+import '../navbar/Navbar.css';
 
 const LoginScreen = () => {
 
@@ -20,7 +21,13 @@ const LoginScreen = () => {
 
   return (
     <div className='login-screen'>
-      <div className='welcome-text-container'><h1>Ingresa a nuestro e-commerce!</h1></div>
+      <div className="navbar">
+         <Link to={'/main/inicio'}><h4 className="navbar-element">Inicio</h4></Link>
+         <Link to={'/login'}><h4 className="navbar-element">Iniciar Sesion</h4></Link>
+         <Link to={'/main/profile'}><h4 className="navbar-element">Mi cuenta</h4></Link>
+         <Link to={'/main/miscompras'}><h4 className="navbar-element">Mis compras</h4></Link>
+      </div>
+      <div className='welcome-text-container'><h1>Ingrese a nuestro e-commerce</h1></div>
       <form className='form-container' onSubmit={login}>
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label">Usuario:</label>
@@ -42,7 +49,7 @@ const LoginScreen = () => {
             placeholder="Password" />
         </div>
         <div className={'button-container'}>
-          <button type="submit" className="btn-primary">Login</button>
+          <button type="submit" className="btn-primary">Ingresar</button>
           <Link to={'/signup'}><h4 className="navbar-element">Crear Cuenta</h4></Link>
         </div>
       </form>

@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {httpGetPublic, httpPostPublic} from "../../utils/httpFunctions";
 import {Link} from "react-router-dom";
-
+import '../navbar/Navbar.css';
 
 const SignUpScreen = () => {
 
@@ -29,30 +29,32 @@ const SignUpScreen = () => {
       <Link to={'/main/profile'}><h4 className="navbar-element">Mi cuenta</h4></Link>
       <Link to={'/main/miscompras'}><h4 className="navbar-element">Mis compras</h4></Link>
     </div>
-      <form onSubmit={createUser}>
-        <fieldset>
+        <div className='welcome-text-container'><h1>Registrese en nuestro e-commerce</h1></div>
+        <form className='form-container' onSubmit={createUser}>
+                <div className="mb-3">
+                  <label htmlFor="exampleFormControlInput1" className="form-label">Usuario:</label>
+                  <input
+                    className="form-control"
+                    id="exampleFormControlInput1"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    placeholder="User Name" />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="exampleFormControlTextarea1" className="form-label2">Constraseña:</label>
+                  <input
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    type="password"
+                    className="form-control2"
+                    id="exampleFormControlInput1"
+                    placeholder="Password" />
+                </div>
+                <div className={'button-container'}>
+                  <button type="submit" className="btn-primary">Registrarse</button>
+                  <Link to={'/login'}><h4 className="navbar-element">Ingresar</h4></Link>
+                </div>
 
-          <div className="mb-3">
-            <label htmlFor="disabledTextInput" className="form-label">Name</label>
-            <input type="text" id="disabledTextInput" className="form-control" value={username}
-                   onChange={(e) => setUsername(e.target.value) }/>
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleFormControlTextarea1" className="form-label2">Constraseña:</label>
-            <input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                type="password"
-                className="form-control2"
-                id="exampleFormControlInput1"
-                placeholder="Password" />
-          </div>
-          <button type="submit" className="btn btn-primary">REGISTRARSE</button>
-          <div>
-            <Link to={'/login'}><h4 className="navbar-element">Ingresar</h4></Link>
-
-          </div>
-        </fieldset>
       </form>
 
 

@@ -3,6 +3,7 @@ import ProductCard from "./ProductCard";
 import {useEffect, useState} from "react";
 import {httpGet, httpPost} from "../utils/httpFunctions";
 import {Link} from "react-router-dom";
+import './navbar/Navbar.css';
 
 
 const Productos = () => {
@@ -21,14 +22,14 @@ const Productos = () => {
     return filtered ? "Dejar de filtrar" : "Filtrar"
   }
 
-   let finalProducts;
+   let finalProductos;
 
     if (filtered) {
-      finalProducts = productos.filter((productos) => {
+      finalProductos = productos.filter((productos) => {
         return productos.price > 1000
       })
     } else {
-      finalProducts = productos
+      finalProductos = productos
     }
 
   const fetchProductos = () => {
@@ -51,7 +52,7 @@ const Productos = () => {
        <Link to={'/main/miscompras'}><h4 className="navbar-element">Mis compras</h4></Link>
     </div>
     <div className="main-div">
-      <h1 className="custom-title">Todos los productos</h1>
+      <h1 className="h2title">Todos los productos</h1>
     </div>
     <div className="main-div2">
       <button onClick={clickFunction}>
@@ -60,12 +61,12 @@ const Productos = () => {
       <form onSubmit={createProductos}>
         <fieldset>
           <div className="mb-3">
-            <label htmlFor="disabledTextInput" className="form-label">Name:</label>
+            <label htmlFor="disabledTextInput" className="form-label">Nombre:</label>
             <input type="text" id="disabledTextInput" className="form-control" value={name}
                    onChange={(e) => setName(e.target.value) }/>
           </div>
           <div className="mb-3">
-            <label htmlFor="disabledTextInput" className="form-label2">Price:</label>
+            <label htmlFor="disabledTextInput" className="form-label2">Precio:</label>
             <input type="text" id="disabledTextInput" className="form-control2" value={price}
                    onChange={(e) => setPrice(e.target.value) }
             />
@@ -76,10 +77,10 @@ const Productos = () => {
     </div>
     <div className="all-cards">
       {
-        finalProducts
-          .map((mapProduct) => {
+        finalProductos
+          .map((mapProductos) => {
             return (
-              <ProductCard product={mapProduct}/>
+              <ProductCard productos={mapProductos}/>
             )
           })
       }

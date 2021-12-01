@@ -1,4 +1,4 @@
-VIDEO CON EL FUNCIONAMIENTO DE LA PAGINA : https://youtu.be/6bC5mqMlwCw
+VIDEO CON EL FUNCIONAMIENTO DE LA PAGINA : https://www.youtube.com/watch?v=0UvQyLGU2Wg
 
 Comandos para inciar el projecto
 

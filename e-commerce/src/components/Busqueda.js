@@ -15,20 +15,22 @@ const BusquedaPage = () => {
     // const urlParams = new URLSearchParams(queryString);
     // const history = useHistory();
     // const [productos, setProductos] = useState([])
-    const [busqueda, setBusqueda] = useState([])
+    const [busqueda, setBusqueda] = useState("")
 
     console.log("probando el valor", busqueda)
 
-    const fetchProductosFilter = () => {
+    const fetchProductosFilter = (busqueda) => {
         httpGet(`api/productos_filter/?name=${busqueda}/`)
             .then((res) => setName(res.data))
     }
 
     const search = (e) => {
+        e.preventDefault()
+        const valueBusqueda = document.querySelector("#busqueda").value;
+        setBusqueda(valueBusqueda)
         httpPut(`api/productos_filter/?name=${busqueda}/`, {name: name})
             .then(fetchProductosFilter)
-    }
-    search();
+    };
 
     const fetch = async () => {
         try {
@@ -54,8 +56,7 @@ const BusquedaPage = () => {
             <h1 className="h2title">Todos los productos</h1>
             <form onSubmit={search}>
             <div>
-                <input id="busqueda" type="text" value={busqueda}
-                       onChange={(e) => setBusqueda(e.target.value) }/>
+                <input id="busqueda" type="text" value={busqueda} />
                 <button type="submit">Buscar</button>
             </div>
             </form>

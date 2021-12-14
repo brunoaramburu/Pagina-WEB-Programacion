@@ -10,6 +10,8 @@ export const httpGet = async (endpoint) => {
   })
 }
 
+
+
 export const httpPost = async (endpoint, data) => {
   return axios.post(baseUrl + endpoint, data, {
     headers: {

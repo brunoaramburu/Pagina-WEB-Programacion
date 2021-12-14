@@ -2,35 +2,17 @@ import '../components/Productos.css'
 import ProductCard from "./ProductCard";
 import {useEffect, useState} from "react";
 import {httpGet, httpPost} from "../utils/httpFunctions";
-import {Link} from "react-router-dom";
+import {Link, useParams, useLocation} from "react-router-dom";
 import './navbar/Navbar.css';
 
 
 const Productos = () => {
 
-  const [filtered, setFiltered] = useState(false)
+
   const [productos, setProductos] = useState([])
 
   const [name, setName] = useState([])
   const [price, setPrice] = useState([])
-
-  const clickFunction = () => {
-    setFiltered(!filtered)
-  }
-
-  const getName = () => {
-    return filtered ? "Dejar de filtrar" : "Filtrar"
-  }
-
-   let finalProductos;
-
-    if (filtered) {
-      finalProductos = productos.filter((productos) => {
-        return productos.price > 1000
-      })
-    } else {
-      finalProductos = productos
-    }
 
   const fetchProductos = () => {
     httpGet('api/productos/')
@@ -53,11 +35,13 @@ const Productos = () => {
     </div>
     <div className="main-div">
       <h1 className="h2title">Todos los productos</h1>
+      <div>
+      <input placeholder="Busqueda por Nombre"/>
+      <button type="submit">Buscar</button>
+      <Link to={'/main/productos/busqueda'}><h5>QueryParams</h5></Link>
+      </div>
     </div>
     <div className="main-div2">
-      <button onClick={clickFunction}>
-        {getName()}
-      </button>
       <form onSubmit={createProductos}>
         <fieldset>
           <div className="mb-3">
@@ -77,7 +61,7 @@ const Productos = () => {
     </div>
     <div className="all-cards">
       {
-        finalProductos
+        productos
           .map((mapProductos) => {
             return (
               <ProductCard productos={mapProductos}/>

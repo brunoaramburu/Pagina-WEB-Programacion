@@ -1,6 +1,7 @@
 import productimg from "../img/nophoto.png";
 import {Link} from "react-router-dom";
 import "./Productos.css"
+import './navbar/Navbar.css';
 
 
 function ProductosCard ({productos}) {

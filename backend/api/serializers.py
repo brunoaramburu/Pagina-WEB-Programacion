@@ -8,6 +8,12 @@ class ProductosSerializer(serializers.ModelSerializer):
         model = Productos
         fields = "__all__"
 
+class ProductosFilterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Productos
+        fields = "__all__"
+
+
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 

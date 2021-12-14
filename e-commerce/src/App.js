@@ -14,6 +14,8 @@ import EditarProducto from "./components/EditarProducto";
 import EliminarProducto from "./components/EliminarProducto";
 import LoginScreen from "./components/LoginScreen/LoginScreen";
 import SignUpScreen from "./components/SignUpScreen/SignUpScreen";
+import Busqueda from "./components/Busqueda";
+import BusquedaPage from "./components/Busqueda";
 
 function App() {
   return (
@@ -34,6 +36,9 @@ function App() {
             </Route>
             <Route exact={true} path={`/main/productos`}>
               <Productos />
+            </Route>
+            <Route exact={true} path={`/main/productos/busqueda`}>
+              <BusquedaPage />
             </Route>
             <Route exact={true} path={`/main/productos/editar/:id`}>
               <EditarProducto/>

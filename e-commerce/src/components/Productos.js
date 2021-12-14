@@ -36,9 +36,7 @@ const Productos = () => {
     <div className="main-div">
       <h1 className="h2title">Todos los productos</h1>
       <div>
-      <input placeholder="Busqueda por Nombre"/>
-      <button type="submit">Buscar</button>
-      <Link to={'/main/productos/busqueda'}><h5>QueryParams</h5></Link>
+      <Link to={'/main/productos/busqueda'}><h5>Busqueda por Nombre</h5></Link>
       </div>
     </div>
     <div className="main-div2">

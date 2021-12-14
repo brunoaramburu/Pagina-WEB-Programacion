@@ -10,40 +10,28 @@ import './navbar/Navbar.css';
 
 const BusquedaPage = () => {
 
-    // const queryString = window.location.search;
     const [name, setName] = useState([])
-    // const urlParams = new URLSearchParams(queryString);
-    // const history = useHistory();
-    // const [productos, setProductos] = useState([])
     const [busqueda, setBusqueda] = useState("")
 
     console.log("probando el valor", busqueda)
 
-    const fetchProductosFilter = (busqueda) => {
-        httpGet(`api/productos_filter/?name=${busqueda}/`)
-            .then((res) => setName(res.data))
-    }
+
+    const fetchProductosFilter = () => {
+        console.log("probando el valor del get", busqueda);
+        httpGet(`api/productos_filter/?name=${busqueda}`).then((res) =>
+            setName(res.data)
+        );
+    };
 
     const search = (e) => {
         e.preventDefault()
-        const valueBusqueda = document.querySelector("#busqueda").value;
-        setBusqueda(valueBusqueda)
-        httpPut(`api/productos_filter/?name=${busqueda}/`, {name: name})
+        // const valueBusqueda = document.querySelector("#busqueda").value;
+        // setBusqueda(valueBusqueda)
+        httpGet(`api/productos_filter/?name=${busqueda}/`, {name: name})
             .then(fetchProductosFilter)
     };
 
-    const fetch = async () => {
-        try {
-            const getNombre = axios.get(`http://localhost:8000/api/productos_filter/?name=${name}`);
-            const responses = await axios.all([getNombre]);
-        } catch (err) {
-            console.error(err);
-        }
-    };
-    fetch();
-
     useEffect(fetchProductosFilter, [])
-    useEffect(fetch, [])
 
     return (<div className='general'>
         <div className="navbar">
@@ -54,9 +42,11 @@ const BusquedaPage = () => {
         </div>
         <div className="main-div">
             <h1 className="h2title">Todos los productos</h1>
+            <Link to={'/main/productos'}><h4>Volver</h4></Link>
             <form onSubmit={search}>
             <div>
-                <input id="busqueda" type="text" value={busqueda} />
+                <input id="busqueda" type="text" value={busqueda}
+                       onChange={(e) => setBusqueda(e.target.value)}/>
                 <button type="submit">Buscar</button>
             </div>
             </form>
@@ -64,11 +54,10 @@ const BusquedaPage = () => {
         <div className="all-cards">
             <article>
                 {name.map((el) => (
-                    <div key={el.name}>
-                        <Link to={`/main/productos/busqueda?name=${el.name}`}>
-                            <h2>{el.name}</h2>
-                        </Link>
-                    </div>
+                    <ProductCard
+                        key={el.id}
+                        productos={el}
+                    />
                 ))}
             </article>
         </div>
